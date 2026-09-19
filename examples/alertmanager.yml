@@ -1,0 +1,41 @@
+# Alertmanager configuration for this workflow (merge the parts you need into your own file).
+#
+# Check it before reloading:
+#   amtool check-config alertmanager.yml
+#
+# The shared secret is read from a file so it never appears in the configuration:
+#   echo -n "Bearer $FTW_WEBHOOK_SECRET" > /etc/alertmanager/secrets/n8n-auth
+# The same value goes into the n8n credential "Triage webhook auth" (header name: Authorization).
+
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: n8n-triage
+  # One group per incident gives the model the best context.
+  group_by: [alertname, cluster, namespace]
+  group_wait: 30s
+  group_interval: 5m
+  # Every repeat is one more LLM call and one more chat message: keep this long.
+  repeat_interval: 4h
+
+receivers:
+  - name: n8n-triage
+    webhook_configs:
+      - url: https://n8n.example.com/webhook/ftw-alertmanager-triage
+        # Resolved groups are posted as a short message and never reach the model.
+        send_resolved: true
+        max_alerts: 0
+        http_config:
+          authorization:
+            type: Bearer
+            credentials_file: /etc/alertmanager/secrets/n8n-auth
+          tls_config:
+            insecure_skip_verify: false
+
+# Basic auth instead of a bearer token (switch the webhook node to an httpBasicAuth credential):
+#
+#   http_config:
+#     basic_auth:
+#       username: n8n
+#       password_file: /etc/alertmanager/secrets/n8n-password

@@ -1,0 +1,57 @@
+{
+  "version": "4",
+  "truncatedAlerts": 0,
+  "receiver": "n8n-triage",
+  "externalURL": "https://alertmanager.example.com",
+  "commonAnnotations": {},
+  "groupKey": "{}:{alertname=\"HighErrorRate\"}",
+  "status": "resolved",
+  "groupLabels": {
+    "alertname": "HighErrorRate"
+  },
+  "commonLabels": {
+    "alertname": "HighErrorRate",
+    "severity": "critical",
+    "namespace": "shop",
+    "service": "checkout"
+  },
+  "alerts": [
+    {
+      "status": "resolved",
+      "labels": {
+        "alertname": "HighErrorRate",
+        "severity": "critical",
+        "namespace": "shop",
+        "service": "checkout",
+        "pod": "checkout-7d9f-abc"
+      },
+      "annotations": {
+        "summary": "checkout is serving 12% 5xx responses",
+        "description": "error ratio 0.12 over 5m, threshold 0.02",
+        "runbook_url": "https://runbooks.example.com/shop/HighErrorRate.md"
+      },
+      "startsAt": "2026-09-17T09:41:00Z",
+      "endsAt": "2026-09-17T10:22:00Z",
+      "generatorURL": "https://prometheus.example.com/graph?g0.expr=rate%28http_requests_total%7Bcode%3D~%225..%22%7D%5B5m%5D%29",
+      "fingerprint": "8d4a2b1c9e0f1a2b"
+    },
+    {
+      "status": "resolved",
+      "labels": {
+        "alertname": "HighLatency",
+        "severity": "warning",
+        "namespace": "shop",
+        "service": "checkout",
+        "pod": "checkout-7d9f-abc"
+      },
+      "annotations": {
+        "summary": "checkout p99 latency is 4.2s",
+        "description": "threshold 1s over 10m"
+      },
+      "startsAt": "2026-09-17T09:44:00Z",
+      "endsAt": "2026-09-17T10:22:00Z",
+      "generatorURL": "https://prometheus.example.com/graph",
+      "fingerprint": "1f0e9d8c7b6a5432"
+    }
+  ]
+}
