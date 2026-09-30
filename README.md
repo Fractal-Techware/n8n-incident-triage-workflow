@@ -134,7 +134,7 @@ No test reaches the internet and no API key is involved; CI runs the same script
 ## Want all the workflows?
 
 This repository is the free edition of the
-**[n8n AI Incident Triage Workflows](https://fractaltechware.gumroad.com/l/n8n-incident-triage-workflows?utm_source=github&utm_medium=readme&utm_campaign=free-repo)**
+**[n8n AI Incident Triage Workflows](https://store.fractaltechware.com/l/n8n-incident-triage-workflows?utm_source=github&utm_medium=readme&utm_campaign=free-repo)**
 pack — same build, same test standard, more of the incident lifecycle:
 
 | | **Free** (this repo) | **Starter** $19 | **Pro** $49 | **Studio** $99 |
@@ -149,7 +149,7 @@ pack — same build, same test standard, more of the incident lifecycle:
 | Loki log context, per-team routing, weekly on-call handover, prompt eval kit (12 golden alerts) | – | – | – | yes |
 | License | MIT | own organization | own organization | client / agency use |
 
-[See the full pack on Gumroad →](https://fractaltechware.gumroad.com/l/n8n-incident-triage-workflows?utm_source=github&utm_medium=readme&utm_campaign=free-repo)
+[See the full pack on Gumroad →](https://store.fractaltechware.com/l/n8n-incident-triage-workflows?utm_source=github&utm_medium=readme&utm_campaign=free-repo)
 
 More free, tested building blocks: [github.com/Fractal-Techware](https://github.com/Fractal-Techware).
 
