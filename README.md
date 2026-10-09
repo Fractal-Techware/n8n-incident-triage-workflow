@@ -137,7 +137,7 @@ This repository is the free edition of the
 **[n8n AI Incident Triage Workflows](https://store.fractaltechware.com/l/n8n-incident-triage-workflows?utm_source=github&utm_medium=readme&utm_campaign=free-repo)**
 pack — same build, same test standard, more of the incident lifecycle:
 
-| | **Free** (this repo) | **Starter** $19 | **Pro** $49 | **Studio** $99 |
+| | **Free** (this repo) | **Starter** $19 | **Pro** $49 | **Agency** $299 |
 |---|:---:|:---:|:---:|:---:|
 | Importable workflows | 1 | 6 | 12 | 16 |
 | Alertmanager triage | yes | yes | yes | yes |
